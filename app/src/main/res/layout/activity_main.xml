@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Background Image -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/bus_bg"
+        android:scaleType="centerCrop"
+        android:alpha="0.3" />
+
+    <!-- Foreground Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:gravity="center_horizontal">
+
+            <!-- Top Red Icon -->
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/red_icon_bg"
+                android:gravity="center"
+                android:layout_marginTop="40dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_bus"
+                    android:tint="#FFFFFF"/>
+            </LinearLayout>
+
+            <!-- Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NMIMS CampusRide"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="#F1F1F1"
+                android:layout_marginTop="20dp"/>
+
+            <!-- Subtitle -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Smart College Bus Pass &amp; Tracking"
+                android:textSize="14sp"
+                android:textColor="#777777"
+                android:layout_marginBottom="30dp"/>
+
+            <!-- Select Role -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SELECT YOUR ROLE"
+                android:textStyle="bold"
+                android:textColor="#888888"
+                android:layout_marginBottom="20dp"/>
+
+            <!-- ADMIN CARD -->
+            <LinearLayout
+                android:id="@+id/adminCard"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:background="@drawable/card_bg"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/light_pink_bg"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_admin"
+                        android:tint="#E53935"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginStart="16dp"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Login as Admin"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:text="Manage passes, buses &amp; schedules"
+                        android:textSize="14sp"
+                        android:textColor="#777777"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- STUDENT CARD -->
+            <LinearLayout
+                android:id="@+id/studentCard"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:background="@drawable/card_bg"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/light_pink_bg"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_student"
+                        android:tint="#E53935"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginStart="16dp"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Login as Student"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:text="View pass, track bus &amp; schedules"
+                        android:textSize="14sp"
+                        android:textColor="#777777"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- SECURITY CARD -->
+            <LinearLayout
+                android:id="@+id/securityCard"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:background="@drawable/card_bg"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/light_pink_bg"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_security"
+                        android:tint="#E53935"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginStart="16dp"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Login as Security"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:text="Verify student passes"
+                        android:textSize="14sp"
+                        android:textColor="#777777"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

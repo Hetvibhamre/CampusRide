@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Background -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/bus_bg"
+        android:scaleType="centerCrop"
+        android:alpha="0.25" />
+
+    <!-- Overlay -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#CCFFFFFF" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- HEADER -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="#121212"
+            android:padding="20dp">
+
+            <!-- LEFT SIDE TEXT -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Admin Panel"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CampusRide Management"
+                    android:textColor="#AAAAAA"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- 🔥 LOGOUT BUTTON -->
+            <ImageButton
+                android:id="@+id/btnLogout"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@android:drawable/ic_lock_power_off"
+                android:background="#33FFFFFF"
+                android:padding="10dp"
+                app:tint="#FFFFFF" />
+        </RelativeLayout>
+
+        <!-- CONTENT -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="20dp">
+
+            <!-- ONLY ONE CHILD -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- ================= PASS SECTION ================= -->
+                <LinearLayout
+                    android:id="@+id/sectionPass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/btnNewPass"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:text="+ New Pass"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:backgroundTint="#E53935"/>
+
+                    <Button
+                        android:id="@+id/btnImportCSV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:text="Import CSV"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:backgroundTint="#43A047"/>
+
+                    <!-- FORM -->
+                    <LinearLayout
+                        android:id="@+id/generateSection"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/glass_card_bg"
+                        android:elevation="10dp"
+                        android:padding="20dp">
+
+                        <EditText
+                            android:id="@+id/etName"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:hint="Student Name"
+                            android:textColor="#000000"
+                            android:textColorHint="#777777"
+                            android:backgroundTint="#E53935"/>
+
+                        <EditText
+                            android:id="@+id/etSap"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:hint="SAP ID"
+                            android:textColor="#000000"
+                            android:textColorHint="#777777"
+                            android:backgroundTint="#E53935"
+                            android:layout_marginTop="12dp"/>
+
+                        <Spinner
+                            android:id="@+id/spProgramme"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="12dp"/>
+
+                        <Spinner
+                            android:id="@+id/spYear"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="12dp"/>
+
+                        <Spinner
+                            android:id="@+id/spBranch"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="12dp"
+                            android:visibility="gone"/>
+
+                        <Button
+                            android:id="@+id/btnValidity"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="Select Validity Date"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            android:backgroundTint="#43A047"/>
+
+                        <Button
+                            android:id="@+id/btnGenerate"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="Generate Pass"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            android:backgroundTint="#E53935"/>
+
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/passRecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"/>
+
+                </LinearLayout>
+
+                <!-- ================= SCHEDULE SECTION ================= -->
+                <LinearLayout
+                    android:id="@+id/sectionSchedule"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:padding="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:text="Schedules"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:textColor="#000"
+                            android:layout_height="wrap_content"/>
+
+                        <Button
+                            android:id="@+id/btnAddSchedule"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:text="+ Add"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp"
+                            android:backgroundTint="#E53935"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvNoSchedule"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="No schedules yet. Add one above."
+                        android:textColor="#888888"
+                        android:textSize="16sp"
+                        android:gravity="center"
+                        android:layout_marginTop="80dp"/>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/scheduleRecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"/>
+                </LinearLayout>
+                <!-- ================= ANNOUNCEMENT SECTION ================= -->
+                <LinearLayout
+                    android:id="@+id/sectionAnnouncement"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:padding="20dp">
+
+                    <!-- HEADER -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:text="Announcements"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:textColor="#000"
+                            android:layout_height="wrap_content"/>
+
+                        <Button
+                            android:id="@+id/btnNewAnnouncement"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:text="+ New"
+                            android:textColor="#FFFFFF"
+                            android:backgroundTint="#E53935"/>
+                    </LinearLayout>
+
+                    <!-- EMPTY TEXT -->
+                    <TextView
+                        android:id="@+id/tvNoAnnouncement"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="No announcements yet"
+                        android:textColor="#888888"
+                        android:gravity="center"
+                        android:layout_marginTop="80dp"/>
+
+                    <!-- LIST -->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/announcementRecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <!-- BOTTOM TAB -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#FFFFFF"
+            android:paddingVertical="10dp"
+            android:weightSum="3">
+
+            <!-- Passes (LEFT) -->
+            <TextView
+                android:id="@+id/tabPasses"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Passes"
+                android:gravity="center"
+                android:padding="12dp"
+                android:textColor="#000"/>
+
+            <!-- Schedule (CENTER) -->
+            <TextView
+                android:id="@+id/tabSchedule"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Schedule"
+                android:gravity="center"
+                android:padding="12dp"
+                android:textColor="#000"/>
+
+            <!-- Announcement (RIGHT) -->
+            <TextView
+                android:id="@+id/tabAnnouncement"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Announcement"
+                android:gravity="center"
+                android:padding="12dp"
+                android:textColor="#000"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>
